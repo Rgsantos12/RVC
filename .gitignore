@@ -26,3 +26,12 @@ rmvpe.pt
 /assets/weights/*
 ffmpeg.*
 ffprobe.*
+
+# Ignore all files and subdirectories in the directory
+out/*
+processed_audios_by_uvr5/*
+*.wav
+
+# But do not ignore the directory itself
+!out/
+!processed_audios_by_uvr5/
