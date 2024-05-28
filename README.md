@@ -47,19 +47,6 @@ Este repositório possui os seguintes recursos:
 + Aceleração de placas gráficas Intel ARC com suporte para IPEX.
 + Conversão de voz utlizando o gradio client
 
-## Utilização do gradio client
-````bash
-# Instale o gradio client no seu ambiente python
-pip install gradio_client==0.15.0
-
-# Execute o seguinte comando 
-python infer-web.py
-
-# Por fim para utilizar o gradio client, abra um novo terminal e execute
-# Exemplo:
-python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
-````
-
 ## Preparando o ambiente
 Os comandos a seguir precisam ser executados no ambiente Python versão 3.10.
 
@@ -186,3 +173,16 @@ Depois disso, você pode executar o WebUI:
 ```bash
 python infer-web.py
 ```
+
+## Utilização do gradio client
+````bash
+# Instale o gradio client no seu ambiente python
+pip install gradio_client==0.15.0
+
+# Execute o seguinte comando 
+python infer-web.py
+
+# Por fim para utilizar o gradio client, abra um novo terminal e execute
+# Exemplo:
+python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
+````
