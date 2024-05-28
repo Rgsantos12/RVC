@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Fork do Retrieval-based-Voice-Conversion-WebUI repo</h1>
+<h1>Fork do Retrieval-based-Voice-Conversion-WebUI Repo</h1>
 Uma estrutura de conversão de voz fácil de usar baseada em VITS.<br><br>
 
 [![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange
@@ -19,12 +19,9 @@ Uma estrutura de conversão de voz fácil de usar baseada em VITS.<br><br>
 ------
 [**Changelog**](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/Changelog_EN.md) | [**FAQ (Frequently Asked Questions)**](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/wiki/FAQ-(Frequently-Asked-Questions)) 
 
-[**English**](../en/README.en.md) | [**中文简体**](../../README.md) | [**日本語**](../jp/README.ja.md) | [**한국어**](../kr/README.ko.md) ([**韓國語**](../kr/README.ko.han.md)) | [**Türkçe**](../tr/README.tr.md) | [**Português**](../pt/README.pt.md)
-
-
 [Vídeo de demonstração](https://www.bilibili.com/video/BV1pm4y1z7Gm/) aqui!
 
-Treinamento/Inferência WebUI：go-web.bat
+Treino/Inferência WebUI：go-web.bat
 ![Traduzido](https://github.com/RafaelGodoyEbert/Retrieval-based-Voice-Conversion-WebUI/assets/78083427/0b894d87-565a-432c-8b5b-45e4a65d5d17)
 
 GUI de conversão de voz em tempo real：go-realtime-gui.bat
@@ -106,7 +103,7 @@ RVC requer outros pré-modelos para inferir e treinar.
 python tools/download_models.py
 ```
 
-Ou apenas baixe-os você mesmo em nosso [Huggingface space](https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/).
+Ou faça o download em [Huggingface space](https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/).
 
 Aqui está uma lista de pré-modelos e outros arquivos que o RVC precisa:
 ```bash
@@ -174,4 +171,21 @@ Depois disso, você pode executar o WebUI:
 ```bash
 python infer-web.py
 ```
+
+## Utilização do gradio client
+````
+Instale o gradio client no seu env do python
+
+pip install gradio_client==0.15.0
+
+Execute o seguinte script 
+
+python infer-web.py
+
+Por fim para utilizar o gradio client abra um novo terminal e execute
+
+Exemplo:
+python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
+
+````
 
