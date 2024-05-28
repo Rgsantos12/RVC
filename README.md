@@ -52,7 +52,7 @@ Este repositório possui os seguintes recursos:
 #Instale o gradio client no seu ambiente python
 pip install gradio_client==0.15.0
 
-#Execute o seguinte script 
+#Execute o seguinte comando 
 python infer-web.py
 
 #Por fim para utilizar o gradio client, abra um novo terminal e execute
