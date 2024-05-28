@@ -5,9 +5,9 @@ import shutil
 import pandas as pd
 
 if __name__ == "__main__":
-                        ## Copy files to a folder to use in UVR5 ##
+    ## Copy files to a folder to use in UVR5 ##
     tsv_path = r"C:\Users\Utilizador\OneDrive - Universidade do Algarve\synthetic-speech-detection-dataset\fake\data\transcript.tsv"
-    df_data = pd.read_csv(tsv_path, sep='\t', encoding="UTF-8")
+    df_data = pd.read_csv(tsv_path, sep="\t", encoding="UTF-8")
     # inp_dir = r"C:\Users\Utilizador\OneDrive - Universidade do Algarve\synthetic-speech-detection-dataset\real"
     # out_dir = r"C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\selected_audios"
     # for i, (aud, text_stream) in enumerate(zip(df_data["audio"], df_data["sentence"]), start=1):
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     #     dst_file = os.path.join(out_dir, f"{i}-{aud}")
     #     shutil.copyfile(src=inp_file, dst=dst_file)
 
-                            ## Rename after going through UVR5 ##
+    ## Rename after going through UVR5 ##
     # inp_dir = r"C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\UVR5_audios"
     # out_dir = r"C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\selected_preprocessed_audios (UVR5)"
     # for audio_file in os.listdir(inp_dir):
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     #         dst_file = os.path.join(out_dir, out_base_file)
     #         shutil.copyfile(src=inp_file, dst=dst_file)
 
-			        ## Rename to a final name to then preprocess the audios ##
+    ## Rename to a final name to then preprocess the audios ##
     # inp_dir = r"C:\Users\Utilizador\OneDrive - Universidade do Algarve\synthetic-speech-detection-dataset\fake"
     # for audio_file in glob.glob(os.path.join(inp_dir, "*.wav")):
     #     inp_file = os.path.join(inp_dir, audio_file)
