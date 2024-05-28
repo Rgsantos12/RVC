@@ -45,25 +45,43 @@ Este repositório possui os seguintes recursos:
 + Use o mais poderoso algoritmo de extração de voz de alta frequência [InterSpeech2023-RMVPE](#Credits) para evitar o problema de som mudo. Fornece os melhores resultados (significativamente) e é mais rápido, com consumo de recursos ainda menor que o Crepe_full.
 + Suporta aceleração de placas gráficas AMD/Intel.
 + Aceleração de placas gráficas Intel ARC com suporte para IPEX.
++ Conversão de voz utlizando o gradio client
+
+## Utilização do gradio client
+````
+Instale o gradio client no seu ambiente python
+
+pip install gradio_client==0.15.0
+
+Execute o seguinte script 
+
+python infer-web.py
+
+Por fim para utilizar o gradio client, abra um novo terminal e execute
+
+Exemplo:
+python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
+
+````
 
 ## Preparando o ambiente
-Os comandos a seguir precisam ser executados no ambiente Python versão 3.8 ou superior.
+Os comandos a seguir precisam ser executados no ambiente Python versão 3.10.
 
 (Windows/Linux)
 Primeiro instale as dependências principais através do pip:
 ```bash
 # Instale as dependências principais relacionadas ao PyTorch, pule se instaladas
 # Referência: https://pytorch.org/get-started/locally/
-pip install torch torchvision torchaudio
+#pip install torch torchvision torchaudio
 
-#Para arquitetura Windows + Nvidia Ampere (RTX30xx), você precisa especificar a versão cuda correspondente ao pytorch de acordo com a experiência de https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/issues/ 21
-#pip instalar tocha torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+#Para arquitetura Windows + Nvidia, você precisa especificar a versão cuda correspondente ao pytorch de acordo com a experiência de https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/issues/ 21
+pip instalar tocha torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 
 #Para placas Linux + AMD, você precisa usar as seguintes versões do pytorch:
 #pip instalar tocha torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.4.2
 ```
 
-Então pode usar poesia para instalar as outras dependências:
+Depois, pode utilizar o poetry para instalar as outras dependências:
 ```bash
 # Instale a ferramenta de gerenciamento de dependências Poetry, pule se instalada
 # Referência: https://python-poetry.org/docs/#installation
@@ -73,7 +91,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 poetry install
 ```
 
-Você também pode usar pip para instalá-los:
+Ou o pip para instalá-las:
 ```bash
 
 for Nvidia graphics cards
@@ -90,7 +108,7 @@ for AMD graphics cards on Linux (ROCm):
 ```
 
 ------
-Usuários de Mac podem instalar dependências via `run.sh`:
+Utilizadores de Mac podem instalar dependências via `run.sh`:
 ```bash
 sh ./run.sh
 ```
@@ -99,7 +117,7 @@ sh ./run.sh
 RVC requer outros pré-modelos para inferir e treinar.
 
 ```bash
-#Baixe todos os modelos necessários em https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/
+# Baixe todos os modelos necessários em https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/
 python tools/download_models.py
 ```
 
@@ -121,7 +139,8 @@ Se você deseja testar o modelo da versão v2 (o modelo da versão v2 alterou a 
 
 ./assets/pretrained_v2
 
-#Se você estiver usando Windows, também pode precisar desses dois arquivos, pule se FFmpeg e FFprobe estiverem instalados
+Se você estiver usando Windows, também pode precisar desses dois arquivos, pule se FFmpeg e FFprobe estiverem instalados
+
 ffmpeg.exe
 
 https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/ffmpeg.exe
@@ -140,14 +159,14 @@ https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/rmvpe.pt
 
 ```
 
-Os usuários de placas gráficas Intel ARC precisam executar o comando `source /opt/intel/oneapi/setvars.sh` antes de iniciar o Webui.
+Os utilizadores de placas gráficas Intel ARC precisam executar o comando `source /opt/intel/oneapi/setvars.sh` antes de iniciar o Webui.
 
 Em seguida, use este comando para iniciar o Webui:
 ```bash
 python infer-web.py
 ```
 
-Se estiver usando Windows ou macOS, você pode baixar e extrair `RVC-beta.7z` para usar RVC diretamente usando `go-web.bat` no Windows ou `sh ./run.sh` no macOS para iniciar o Webui.
+Se estiver usando Windows ou macOS, pode fazer o download e extrair `RVC-beta.7z` para correr o RVC diretamente utilizando `go-web.bat` no Windows ou `sh ./run.sh` no macOS para iniciar o Webui.
 
 ## Suporte ROCm para placas gráficas AMD (somente Linux)
 Para usar o ROCm no Linux, instale todos os drivers necessários conforme descrito [aqui](https://rocm.docs.amd.com/en/latest/deploy/linux/os-native/install.html).
@@ -171,21 +190,3 @@ Depois disso, você pode executar o WebUI:
 ```bash
 python infer-web.py
 ```
-
-## Utilização do gradio client
-````
-Instale o gradio client no seu env do python
-
-pip install gradio_client==0.15.0
-
-Execute o seguinte script 
-
-python infer-web.py
-
-Por fim para utilizar o gradio client abra um novo terminal e execute
-
-Exemplo:
-python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
-
-````
-
