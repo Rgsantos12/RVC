@@ -49,19 +49,15 @@ Este repositório possui os seguintes recursos:
 
 ## Utilização do gradio client
 ````
-Instale o gradio client no seu ambiente python
-
+#Instale o gradio client no seu ambiente python
 pip install gradio_client==0.15.0
 
-Execute o seguinte script 
-
+#Execute o seguinte script 
 python infer-web.py
 
-Por fim para utilizar o gradio client, abra um novo terminal e execute
-
-Exemplo:
+#Por fim para utilizar o gradio client, abra um novo terminal e execute
+#Exemplo:
 python s2s.py --path_to_index "logs/AUTO (WALL-E_Latin American Dub) - Weights.gg Model/auto_model.index" --is_male_voice --inp_dir "C:\Users\Utilizador\OneDrive\Documentos\Retrieval-based-Voice-Conversion-WebUI\processed_audios_by_uvr5" --inp_format "wav" --out_dir "output_audios/AUTO"
-
 ````
 
 ## Preparando o ambiente
